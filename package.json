@@ -1,6 +1,6 @@
 {
   "name": "@apcovernight/node-utils",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Useful JS functionality used in multiple projects",
   "main": "index.js",
   "scripts": {
