@@ -1,0 +1,32 @@
+{
+  "name": "@apcovernight/node-utils",
+  "version": "0.1.0",
+  "description": "Useful JS functionality used in multiple projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && nyc mocha",
+    "lint": "eslint *.js Format/**/*.js Utils/**/*.js Parse/**/*.js ",
+    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=text-lcov | codeclimate-test-reporter",
+    "stryker": "stryker run",
+    "write-docs": "jsdoc2md Parse/* > docs/Parse.md && jsdoc2md Format/* > docs/Format.md && jsdoc2md Utils/* > docs/Utils.md"
+  },
+  "dependencies": {
+    "build-url": "1.0.10",
+    "moment": "2.20.1"
+  },
+  "devDependencies": {
+    "apc-style": "1.0.1",
+    "apc-test": "1.0.3",
+    "jsdoc-to-markdown": "4.0.1"
+  },
+  "author": "Ian Egner <https://twitter.com/ianegner>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/APCOvernight/node-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/APCOvernight/node-utils/issues"
+  },
+  "homepage": "https://github.com/APCOvernight/node-utils#readme"
+}
