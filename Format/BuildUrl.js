@@ -15,6 +15,8 @@ const BuildUrl = require('build-url')
  * @requires build-url
  *
  * @example
+ * const baseUrl = 'http://mybase.com/'
+ *
  * const params = {
  *   depotId: 21,
  *   sort: asc
@@ -24,7 +26,7 @@ const BuildUrl = require('build-url')
  *
  * const hash = anchor_34
  *
- * BuildUrl(path, params, hash)
+ * BuildUrl(baseUrl, path, params, hash)
  *
  * // returns 'http://mybase.com/admin?depotId=21&sort=asc#anchor_34'
  */

@@ -9,6 +9,9 @@ Useful node functions used across multiple projects
 - [Parse](docs/Parse.md) - Parse user submitted data
 - [Utils](docs/Utils.md) - Utility classes
 
+### Generate Docs
+Docs can be regenerated with the command `yarn write-docs`
+
 [npm-badge]: https://img.shields.io/npm/v/@apcovernight/node-utils.svg?maxAge=30
 [npm-link]:https://npmjs.com/package/@apcovernight/node-utils
 [license-badge]: https://img.shields.io/npm/l/@apcovernight/node-utils.svg
