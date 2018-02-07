@@ -3,7 +3,7 @@
 /**
  * Parse post request from an HTML input. Useful for true/false radio buttons
  * @module Parse/Bool
- * @param  {(String|Null|Boolean)} [value]  request field
+ * @param  {(String|Null|Boolean)} [str]  request field
  * @return {(Boolean|Null)}                 Bool or Null to be saved to model
  *
  * @example
@@ -16,18 +16,18 @@
  * ParseBool('')
  * // returns null
  */
-module.exports = value => {
-  if (value === null || typeof value === 'undefined') {
-    return null
+module.exports = str => {
+  let value = null
+
+  if (str === null || typeof str === 'undefined') {
+    value = null
+  } else if (typeof str !== 'string') {
+    value = Boolean(str)
+  } else if (str.trim() === 'true' || str.trim() === '1') {
+    value = true
+  } else if (str.trim() === 'false' || str.trim() === '0') {
+    value = false
   }
-  if (typeof value !== 'string') {
-    return Boolean(value)
-  }
-  if (value.trim() === 'true' || value.trim() === '1') {
-    return true
-  }
-  if (value.trim() === 'false' || value.trim() === '0') {
-    return false
-  }
-  return null
+
+  return value
 }

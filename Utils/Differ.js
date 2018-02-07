@@ -80,7 +80,32 @@ class Differ {
    * @return {Boolean} Do they match?
    */
   _compareTruthy (l, r) {
-    return (l === true || l === 1) && (r === true || r === 1)
+    return this._compareBoolean(true, l, r)
+  }
+
+  /**
+   * Compare falsey (0 == false)
+   * @memberof Utils/Differ
+   * @private
+   * @param  {Mixed} l left value
+   * @param  {Mixed} r right value
+   * @return {Boolean} Do they match?
+   */
+  _compareFalsey (l, r) {
+    return this._compareBoolean(false, l, r)
+  }
+
+  /**
+   * Compare truthy (1 == true)
+   * @memberof Utils/Differ
+   * @private
+   * @param  {Boolean} bool Truthy or Falsey
+   * @param  {Mixed} l left value
+   * @param  {Mixed} r right value
+   * @return {Boolean} Do they match?
+   */
+  _compareBoolean (bool, l, r) {
+    return (l === bool || l === +bool) && (r === bool || r === +bool)
   }
 
   /**
@@ -117,18 +142,6 @@ class Differ {
     }
 
     return false
-  }
-
-  /**
-   * Compare falsey (0 == false)
-   * @memberof Utils/Differ
-   * @private
-   * @param  {Mixed} l left value
-   * @param  {Mixed} r right value
-   * @return {Boolean} Do they match?
-   */
-  _compareFalsey (l, r) {
-    return (l === false || l === 0) && (r === false || r === 0)
   }
 
   /**

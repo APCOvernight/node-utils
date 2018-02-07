@@ -19,17 +19,17 @@
  * // returns ''
  */
 module.exports = value => {
+  let str = ''
+
   if (value === null || value === undefined) {
-    return ''
+    str = ''
+  } else if (typeof value !== 'string') {
+    str = Boolean(value).toString()
+  } else if (value.trim() === 'true' || value.trim() === '1') {
+    str = 'true'
+  } else if (value.trim() === 'false' || value.trim() === '0') {
+    str = 'false'
   }
-  if (typeof value !== 'string') {
-    return Boolean(value).toString()
-  }
-  if (value.trim() === 'true' || value.trim() === '1') {
-    return 'true'
-  }
-  if (value.trim() === 'false' || value.trim() === '0') {
-    return 'false'
-  }
-  return ''
+
+  return str
 }

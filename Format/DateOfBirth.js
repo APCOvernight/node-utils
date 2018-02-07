@@ -2,6 +2,56 @@
 
 const Moment = require('moment')
 
+const months = [
+  { label: 'January', value: '01' },
+  { label: 'February', value: '02' },
+  { label: 'March', value: '03' },
+  { label: 'April', value: '04' },
+  { label: 'May', value: '05' },
+  { label: 'June', value: '06' },
+  { label: 'July', value: '07' },
+  { label: 'August', value: '08' },
+  { label: 'September', value: '09' },
+  { label: 'October', value: '10' },
+  { label: 'November', value: '11' },
+  { label: 'December', value: '12' }
+]
+
+/**
+ * Generate Year options for dropdown
+ * @private
+ * @param  {Number} currentYear
+ * @return {Array.Object}
+ */
+const _generateYears = currentYear => {
+  const years = []
+  Array.from(Array(100).keys()).forEach(index => {
+    index = currentYear - index - 8
+    years.push({
+      label: index.toString(),
+      value: index.toString()
+    })
+  })
+  return years
+}
+
+/**
+ * Generate day of month options for dropdown
+ * @private
+ * @return {Array.Object}
+ */
+const _generateDays = () => {
+  const days = []
+  Array.from(Array(31).keys()).forEach(index => {
+    const str = `${index + 1}`
+    days.push({
+      label: str,
+      value: (`0${str}`).slice(-2)
+    })
+  })
+  return days
+}
+
 /**
  * Return form field options and values for date of birth
  *
@@ -36,81 +86,9 @@ module.exports = (dateOfBirth) => {
     day = split[2]
   }
 
-  const years = []
-  Array.from(Array(100).keys()).forEach(index => {
-    index = currentYear - index - 8
-    years.push({
-      label: index.toString(),
-      value: index.toString()
-    })
-  })
+  const years = _generateYears(currentYear)
 
-  const days = []
-  Array.from(Array(31).keys()).forEach(index => {
-    const str = `${index + 1}`
-    days.push({
-      label: str,
-      value: (`0${str}`).slice(-2)
-    })
-  })
+  const days = _generateDays()
 
-  const months = [
-    {
-      label: 'January',
-      value: '01'
-    },
-    {
-      label: 'February',
-      value: '02'
-    },
-    {
-      label: 'March',
-      value: '03'
-    },
-    {
-      label: 'April',
-      value: '04'
-    },
-    {
-      label: 'May',
-      value: '05'
-    },
-    {
-      label: 'June',
-      value: '06'
-    },
-    {
-      label: 'July',
-      value: '07'
-    },
-    {
-      label: 'August',
-      value: '08'
-    },
-    {
-      label: 'September',
-      value: '09'
-    },
-    {
-      label: 'October',
-      value: '10'
-    },
-    {
-      label: 'November',
-      value: '11'
-    },
-    {
-      label: 'December',
-      value: '12'
-    }
-  ]
-
-  return {
-    years,
-    months,
-    days,
-    year,
-    month,
-    day
-  }
+  return { years, months, days, year, month, day }
 }
