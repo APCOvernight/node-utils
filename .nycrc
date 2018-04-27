@@ -28,7 +28,8 @@
     "text",
     "text-summary",
     "html",
-    "cobertura"
+    "cobertura",
+    "lcov"
   ],
   "cache": true
 }
