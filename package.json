@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run lint && nyc mocha",
     "lint": "eslint *.js Format/**/*.js Utils/**/*.js Parse/**/*.js ",
-    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=text-lcov | codeclimate-test-reporter",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "stryker": "stryker run",
     "write-docs": "jsdoc2md Parse/* > docs/Parse.md && jsdoc2md Format/* > docs/Format.md && jsdoc2md Utils/* > docs/Utils.md"
   },
@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "apc-style": "1.1.0",
-    "apc-test": "1.0.4",
+    "apc-test": "1.1.0",
     "jsdoc-to-markdown": "4.0.1"
   },
   "author": "Ian Egner <https://twitter.com/ianegner>",
