@@ -40,7 +40,12 @@ module.exports = (object, first, sort) => {
   })
 
   if (sort) {
-    array.sort((a, b) => a.label > b.label)
+    array.sort((a, b) => {
+      if (a.label < b.label) {
+        return -1
+      }
+      return 1
+    })
   }
 
   return array
