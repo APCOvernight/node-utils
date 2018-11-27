@@ -25,6 +25,7 @@ const regexReplace = (value, regex) => {
  * @module Format/Sanitize.optionalDate
  * @requires moment
  * @param  {String} date   Human Friendly Date
+ * @param  {String} formatString Format String
  * @return {(String|Null)} YYYY-MM-DD
  *
  * @example
@@ -36,9 +37,9 @@ const regexReplace = (value, regex) => {
  *
  * // returns null
  */
-const optionalDate = function (date) {
-  if (date && Moment(date).isValid()) {
-    date = Moment(date).format('YYYY-MM-DD')
+const optionalDate = function (date, formatString) {
+  if (date && Moment(date, formatString).isValid()) {
+    date = Moment(date, formatString).format('YYYY-MM-DD')
   }
   return date === '' ? null : date
 }

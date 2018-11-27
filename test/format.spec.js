@@ -333,7 +333,7 @@ describe('Date Sanitation', () => {
   it('Converts format of real date', () => {
     const date = 'Mon Jul 17 2017'
     const correctDate = '2017-07-17'
-    expect(Sanitize.optionalDate(date)).to.equal(correctDate)
+    expect(Sanitize.optionalDate(date, 'ddd MMM D YYYY')).to.equal(correctDate)
   })
 })
 
