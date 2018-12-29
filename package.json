@@ -11,7 +11,7 @@
     "write-docs": "jsdoc2md Parse/* > docs/Parse.md && jsdoc2md Format/* > docs/Format.md && jsdoc2md Utils/* > docs/Utils.md"
   },
   "dependencies": {
-    "build-url": "1.3.0",
+    "build-url": "1.3.2",
     "moment": "2.22.1"
   },
   "devDependencies": {
