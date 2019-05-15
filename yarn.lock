@@ -437,10 +437,10 @@ browser-stdout@1.3.1:
   resolved "https://registry.yarnpkg.com/browser-stdout/-/browser-stdout-1.3.1.tgz#baa559ee14ced73452229bad7326467c61fabd60"
   integrity sha512-qhAVI1+Av2X7qelOfAIYwXONood6XlZE/fXaBSmW/T5SzLAmCgzi+eiWE7fUvbHaeNBQH13UftjpXxsfLkMpgw==
 
-build-url@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/build-url/-/build-url-1.3.0.tgz#4271530adb12fe01591a7cbff662336f4e75381c"
-  integrity sha512-pm2muKY6maVquNrYvnqOdylDJ6O+mazUmKdPVyOqFYsekXYiuxwrDiyQYm6QrBsxNgSPEyf6XfJKrIQlow9YFg==
+build-url@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/build-url/-/build-url-1.3.3.tgz#fad1ef30d8861931f85bc1f41fca0a537be31e5f"
+  integrity sha512-uSC8d+d4SlbXTu/9nBhwEKi33CE0KQgCvfy8QwyrrO5vCuXr9hN021ZBh8ip5vxPbMOrZiPwgqcupuhezxiP3g==
 
 builtin-modules@^1.0.0, builtin-modules@^1.1.1:
   version "1.1.1"
