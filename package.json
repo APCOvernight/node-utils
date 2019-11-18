@@ -17,7 +17,7 @@
   "devDependencies": {
     "apc-style": "1.1.0",
     "apc-test": "1.1.0",
-    "jsdoc-to-markdown": "4.0.1"
+    "jsdoc-to-markdown": "5.0.3"
   },
   "author": "Ian Egner <https://twitter.com/ianegner>",
   "license": "MIT",
